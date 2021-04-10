@@ -51,7 +51,7 @@ final class Wedevs_Academy {
     public static function init() {
         static $instance = false;
 
-        if ( !$instance ) {
+        if ( ! $instance ) {
             $instance = new self();
         }
 
@@ -90,13 +90,8 @@ final class Wedevs_Academy {
      * @return void
      */
     public function activate() {
-        $installed = get_option( 'wd_academy_installed' );
-
-        if ( !$installed ) {
-            update_option( 'wd_academy_installed', time() );
-        }
-
-        update_option( 'wd_academy_version', WD_ACADEMY_VERSION );
+        $installer = new Wedevs\Academy\Installer();
+        $installer->run();
     }
 }
 

@@ -1,7 +1,6 @@
 <?php
 namespace Wedevs\Academy\Frontend;
 
-
 /**
  * Shortcode handler class
  */

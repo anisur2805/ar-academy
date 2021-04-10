@@ -30,15 +30,12 @@ class AddressBook {
             return;
         }
         if ( !current_user_can( 'manage_options' ) ) {
-            wp_die( 'Are you' );
-        }
-
-        if ( ! wp_verify_nonce( $_POST['_wpnonce'], 'new-address' ) ) {
             wp_die( 'Are you cheating!' );
         }
 
-        var_dump( $_POST );
-        exit();
+        if ( !wp_verify_nonce( $_POST['_wpnonce'], 'new-address' ) ) {
+            wp_die( 'Are you cheating!' );
+        }
 
     }
 
