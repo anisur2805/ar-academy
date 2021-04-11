@@ -1,6 +1,6 @@
 <div class="wrap">
 	<h1 class="wp-heading-inline"><?php _e( 'Add Address', 'ar-academy' ); ?></h1>
-
+	<?php var_dump( $this->errors ); ?>
 	<form action="" method="POST">
 		<table class="form-table">
 			<tr>

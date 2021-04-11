@@ -2,6 +2,8 @@
 namespace AR\Academy\Admin;
 
 class AddressBook {
+
+    public $errors = [];
     public function plugin_page() {
         $action = isset( $_GET['action'] ) ? $_GET['action'] : 'list';
 
@@ -37,9 +39,35 @@ class AddressBook {
             wp_die( 'Are you cheating!' );
         }
 
-		var_dump( ar_ac_insert_address() );
-		
+        $name    = isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : '';
+        $address = isset( $_POST['address'] ) ? sanitize_textarea_field( $_POST['address'] ) : '';
+        $phone   = isset( $_POST['phone'] ) ? sanitize_text_field( $_POST['phone'] ) : '';
+
+        if ( empty( $name ) ) {
+            $this->errors['name'] = __( 'Please provides a valid name', 'ar-academy' );
+        }
+        if ( empty( $phone ) ) {
+            $this->errors['phone'] = __( 'Please provides a valid phone number', 'ar-academy' );
+        }
+
+        if ( !empty( $this->errors ) ) {
+            return;
+        }
+
+        $insert_id = ar_ac_insert_address( [
+            'name'    => $name,
+            'address' => $address,
+            'phone'   => $phone,
+        ] );
+
+        if ( is_wp_error( $insert_id ) ) {
+            wp_die( $insert_id->get_error_message() );
+        }
+
+        $redirected_to = admin_url( 'admin.php?page=ar-academy&inserted=true' );
+        wp_redirect( $redirected_to );
+		exit;
+
     }
-	
 
 }
