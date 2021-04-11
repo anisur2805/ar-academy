@@ -15,6 +15,6 @@
     "psr-4": {
       "AR\\Academy\\": "includes/"
     },
-	"files": []
+	"files": [ "includes/functions.php" ]
   }
 }

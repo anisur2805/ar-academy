@@ -37,6 +37,9 @@ class AddressBook {
             wp_die( 'Are you cheating!' );
         }
 
+		var_dump( ar_ac_insert_address() );
+		
     }
+	
 
 }
