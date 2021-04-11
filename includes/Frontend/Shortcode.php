@@ -1,5 +1,5 @@
 <?php
-namespace Wedevs\Academy\Frontend;
+namespace AR\Academy\Frontend;
 
 /**
  * Shortcode handler class
@@ -9,7 +9,7 @@ class Shortcode {
 	 * Initializes the class
 	 */
     public function __construct() {
-        add_shortcode( 'wedevs-academy', [$this, 'render_shortcode'] );
+        add_shortcode( 'ar-academy', [$this, 'render_shortcode'] );
     }
 
 	/**

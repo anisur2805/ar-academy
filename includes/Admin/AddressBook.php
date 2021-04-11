@@ -1,5 +1,5 @@
 <?php
-namespace Wedevs\Academy\Admin;
+namespace AR\Academy\Admin;
 
 class AddressBook {
     public function plugin_page() {

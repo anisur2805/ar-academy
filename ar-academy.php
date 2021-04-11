@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       WeDevs Academy
+ * Plugin Name:       AR Academy
  * Plugin URI:        https://example.com/
  * Description:       Handle the basics with this plugin.
  * Version:           1.0.0
@@ -10,7 +10,7 @@
  * Author URI:        https://anisur-rahman.xyz/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       wedevs-academy
+ * Text Domain:       ar-academy
  * Domain Path:       /languages
  */
 
@@ -23,7 +23,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * The main plugin class
  */
-final class Wedevs_Academy {
+final class AR_Academy {
 
     /**
      * Plugin version
@@ -46,7 +46,7 @@ final class Wedevs_Academy {
     /**
      * Initialize a singleton instance
      *
-     * @return \Wedevs_Academy
+     * @return \AR_Academy
      */
     public static function init() {
         static $instance = false;
@@ -64,11 +64,11 @@ final class Wedevs_Academy {
      * @return void
      */
     public function define_constants() {
-        define( 'WD_ACADEMY_VERSION', self::version );
-        define( 'WD_ACADEMY_FILE', __FILE__ );
-        define( 'WD_ACADEMY_PATH', __DIR__ );
-        define( 'WD_ACADEMY_URL', plugins_url( '', WD_ACADEMY_FILE ) );
-        define( 'WD_ACADEMY_ASSETS', WD_ACADEMY_URL . '/assets' );
+        define( 'AR_ACADEMY_VERSION', self::version );
+        define( 'AR_ACADEMY_FILE', __FILE__ );
+        define( 'AR_ACADEMY_PATH', __DIR__ );
+        define( 'AR_ACADEMY_URL', plugins_url( '', AR_ACADEMY_FILE ) );
+        define( 'AR_ACADEMY_ASSETS', AR_ACADEMY_URL . '/assets' );
     }
 
     /**
@@ -78,9 +78,9 @@ final class Wedevs_Academy {
      */
     public function init_plugin() {
         if ( is_admin() ) {
-            new Wedevs\Academy\Admin();
+            new AR\Academy\Admin();
         } else {
-            new Wedevs\Academy\Frontend();
+            new AR\Academy\Frontend();
         }
     }
 
@@ -90,7 +90,7 @@ final class Wedevs_Academy {
      * @return void
      */
     public function activate() {
-        $installer = new Wedevs\Academy\Installer();
+        $installer = new AR\Academy\Installer();
         $installer->run();
     }
 }
@@ -98,11 +98,11 @@ final class Wedevs_Academy {
 /**
  * Initialize the main plugin
  *
- * @return \Wedevs_Academy
+ * @return \AR_Academy
  */
-function wedevs_academy() {
-    return Wedevs_Academy::init();
+function AR_Academy() {
+    return AR_Academy::init();
 }
 
 // Kick-off the plugin
-wedevs_academy();
+AR_Academy();

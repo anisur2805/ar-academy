@@ -6,11 +6,11 @@
  * 
  * @return int|WP_Error
  */
-function wd_ac_insert_address( $args = [] ) {
+function ar_ac_insert_address( $args = [] ) {
 	global $wpdb;
 	
 	if( empty( $args['name'] ) ) {
-		return new \WP_Error('no-name', __('You must provide a name', 'wedevs-academy') );
+		return new \WP_Error('no-name', __('You must provide a name', 'ar-academy') );
 	}
 	
 	$defaults = [
@@ -36,7 +36,7 @@ function wd_ac_insert_address( $args = [] ) {
 	);
 	
 	if( ! $inserted ) {
-		return new \WP_Error('failed-to-insert', __('Failed to insert data', 'wedevs-academy' ) );
+		return new \WP_Error('failed-to-insert', __('Failed to insert data', 'ar-academy' ) );
 	}
 	
 	return $wpdb->insert_id;

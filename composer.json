@@ -1,5 +1,5 @@
 {
-  "name": "anisur2805/wedevs-academy",
+  "name": "anisur2805/ar-academy",
   "description": "A tutorial plugin for test",
   "type": "wordpress-plugin",
   "license": "GPLv2",
@@ -13,7 +13,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "Wedevs\\Academy\\": "includes/"
+      "AR\\Academy\\": "includes/"
     },
 	"files": []
   }

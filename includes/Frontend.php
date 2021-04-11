@@ -1,5 +1,5 @@
 <?php
-namespace Wedevs\Academy;
+namespace AR\Academy;
 
 class Frontend {
     public function __construct() {

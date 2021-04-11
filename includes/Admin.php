@@ -1,5 +1,5 @@
 <?php
-namespace Wedevs\Academy;
+namespace AR\Academy;
 
 class Admin {
     public function __construct() {
